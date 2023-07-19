@@ -2,11 +2,11 @@ import mysql, { RowDataPacket, FieldPacket, QueryOptions } from 'mysql2/promise'
 
 const pool = mysql.createPool({
   // Configure the database connection details
-  host: 'localhost',
-  port: 3306,
-  user: 'user',
-  password: '',
-  database: 'test',
+  host: process.env.PGHOST,
+  port: parseInt(process.env.PGPORT??'', 10),
+  user: process.env.PGUSER,
+  password: process.env.PGPASSWORD,
+  database: process.env.PGDATABASE,
 });
 
 export async function executeQuery<T>(

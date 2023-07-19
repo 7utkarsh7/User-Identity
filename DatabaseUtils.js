@@ -16,7 +16,7 @@ exports.executeQuery = void 0;
 const promise_1 = __importDefault(require("mysql2/promise"));
 const pool = promise_1.default.createPool({
     // Configure the database connection details
-    host: 'localhost',
+    host: process.env.PGHOST,
     port: 3306,
     user: 'user',
     password: '',
