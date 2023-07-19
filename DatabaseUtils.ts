@@ -1,5 +1,6 @@
 import mysql, { RowDataPacket, FieldPacket, QueryOptions } from 'mysql2/promise';
-
+import dotenv from 'dotenv';
+dotenv.config();
 const pool = mysql.createPool({
   // Configure the database connection details
   host: process.env.PGHOST,
