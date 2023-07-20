@@ -58,11 +58,11 @@ Response:
 ```
 Example Request
 ```curl
-curl --location 'https://user-identity-api.herokuapp.com/api/identify' \
+curl --location 'https://user-identity-gbgf4pcit-7utkarsh7.vercel.app/api/identify' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "email": "john@example.com",
-    "phoneNumber": "1234567890"
+    "email": "fgh@",
+    "phoneNumber": "9889"
 }'
 ```
 
