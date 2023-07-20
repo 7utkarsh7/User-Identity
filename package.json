@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.ts",
-  "dev": "vercel dev",      
-  "build": "vercel",       
-  "deploy": "vercel --prod" 
+    "build": "tsc", 
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",

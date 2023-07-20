@@ -4,15 +4,13 @@
       {
         "src": "index.ts",
         "use": "@vercel/node"
-      },
-      {
-        "src": "api/identify.ts",
-        "use": "@vercel/node"
       }
     ],
     "routes": [
-      { "src": "/api/identify", "dest": "api/identify.ts" },
-      { "src": "/(.*)", "dest": "index.ts" }
+      {
+        "src": "/api/identify",
+        "dest": "index.ts"
+      }
     ]
   }
   
