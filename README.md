@@ -61,8 +61,8 @@ Example Request
 curl --location 'https://user-identity-gbgf4pcit-7utkarsh7.vercel.app/api/identify' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "email": "fgh@",
-    "phoneNumber": "9889"
+    "email": "dummy@123.in",
+    "phoneNumber": "9889787889"
 }'
 ```
 
