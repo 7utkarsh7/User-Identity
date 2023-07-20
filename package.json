@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": " nodemon src/index.ts"
+    "start": "node index.ts",
+  "dev": "vercel dev",      
+  "build": "vercel",       
+  "deploy": "vercel --prod" 
   },
   "keywords": [],
   "author": "",

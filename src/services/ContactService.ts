@@ -1,5 +1,5 @@
-import { Contact } from "./ContactInterface";
-import { ContactRepository } from "./ContactRepository";
+import { Contact } from "../models/ContactInterface";
+import { ContactRepository } from "../repository/ContactRepository";
 
 export class ContactService {
   private contactRepository: ContactRepository;
