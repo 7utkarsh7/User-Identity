@@ -18,16 +18,16 @@ The User Identity API allows users to identify contacts using their email and ph
    git clone https://github.com/your-username/user-identity-api.git
 Install the dependencies using npm:
 
-bash
-Copy code
+```bash
 cd user-identity-api
 npm install
+```
 Usage
 To run the API server, use the following command:
 
-bash
-Copy code
+```bash
 npm start
+```
 The server will be running on http://localhost:8080.
 
 API Endpoint
