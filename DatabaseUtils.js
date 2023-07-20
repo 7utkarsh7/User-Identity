@@ -25,10 +25,41 @@ const pool = promise_1.default.createPool({
     password: process.env.PGPASSWORD,
     database: process.env.PGDATABASE,
 });
-function executeQuery(query, values, options) {
+// Helper function to check if the query is a table creation query
+function isCreateTableQuery(query) {
+    return query.trim().toLowerCase().startsWith('create table');
+}
+// Function to get a new connection from the pool
+function getConnection() {
     return __awaiter(this, void 0, void 0, function* () {
         const connection = yield pool.getConnection();
         try {
+            // Execute the create table query
+            yield connection.query(`
+      CREATE TABLE IF NOT EXISTS Contact (
+        id int(11) NOT NULL AUTO_INCREMENT,
+        phoneNumber text,
+        email text,
+        linkedId int(11) DEFAULT NULL,
+        linkPrecedence text,
+        createdAt text,
+        updatedAt text,
+        PRIMARY KEY (id)
+      ) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=latin1;
+    `);
+        }
+        catch (error) {
+            console.error('Error creating table:', error);
+            throw error;
+        }
+        return connection;
+    });
+}
+function executeQuery(query, values, options) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const connection = yield getConnection();
+        try {
+            // For other queries (SELECT, INSERT, etc.), execute normally
             const [rows, fields] = yield connection.query(query, values);
             return rows;
         }
